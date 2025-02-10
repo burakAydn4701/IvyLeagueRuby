@@ -1,0 +1,18 @@
+databases:
+  - name: ivy_league_db
+    databaseName: ivy_league_db
+    user: ivy_league
+
+services:
+  - type: web
+    name: ivy-league-api
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ivy_league_db
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false 
