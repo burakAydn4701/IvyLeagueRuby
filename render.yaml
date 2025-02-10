@@ -1,13 +1,13 @@
 databases:
   - name: ivy_league_db
     databaseName: ivy_league_db
-    user: ivy_league
+    user: myrza
 
 services:
   - type: web
     name: ivy-league-api
     env: ruby
-    buildCommand: "./bin/render-build.sh"
+    buildCommand: "bundle install"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
