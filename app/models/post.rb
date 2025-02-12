@@ -9,5 +9,5 @@ class Post < ApplicationRecord
 
   # Update the validation to use has_one_attached
   has_one_attached :image
-  validates :image, content_type: ['image/png', 'image/jpg', 'image/jpeg']
+  validates :image, content_type: ['image/png', 'image/jpeg']
 end
