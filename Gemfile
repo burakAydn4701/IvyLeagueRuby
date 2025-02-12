@@ -52,5 +52,6 @@ group :development do
 end
 
 gem 'jwt'           # For handling JSON Web Tokens
+gem 'active_storage_validations'
 
 

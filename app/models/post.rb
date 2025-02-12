@@ -4,8 +4,10 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :votes, as: :votable
 
-  has_one_attached :image # This adds support for attaching an image
+  # Add this line to your Gemfile if not present
+  # gem 'active_storage_validations'
 
-  # Validations for image
-  validates :image, content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 5.megabytes }
+  # Update the validation to use has_one_attached
+  has_one_attached :image
+  validates :image, content_type: ['image/png', 'image/jpg', 'image/jpeg']
 end
