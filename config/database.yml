@@ -13,4 +13,4 @@ test:
 
 production:
   <<: *default
-  url: postgresql://neondb_owner:npg_5hpoUyIaft8K@ep-ancient-art-a222vddh-pooler.eu-central-1.aws.neon.tech/neondb?sslmode=require
+  url: <%= ENV['DATABASE_URL'] %>
